@@ -2,17 +2,15 @@ var n1 = document.getElementById('numero1')
 var n2 = document.getElementById('numero2')
 var resultado = document.getElementById('resultado')
 
-function somar(){
-    var n1 = Number(numero1.value)
-    var n2 = Number(numero2.value)
+function soma(){
     resultado.innerHTML = parseInt(n1.value) + parseInt(n2.value)
 }
-function subtrair(){
+function subtração(){
     resultado.innerHTML = parseInt(n1.value) - parseInt(n2.value)
 }
-function multiplicar(){
+function multiplicação(){
     resultado.innerHTML = parseInt(n1.value) * parseInt(n2.value)
 }
-function dividir(){
+function divisão(){
     resultado.innerHTML = parseInt(n1.value) / parseInt(n2.value)
 }
