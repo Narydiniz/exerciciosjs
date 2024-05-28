@@ -18,20 +18,20 @@ button{
     display:inline-block;
     margin: 20px 0 0;
     padding: 10px 20px;
-    background-color: #ff5e00;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 button:hover{
-    background-color: #f59b67;
+    background-color: #007bff;
 }
 .resultado{
     display: inline-flex;
     margin: 20px 0 0;
     padding: 10px 20px;
-    background-color: #ff5e00;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;

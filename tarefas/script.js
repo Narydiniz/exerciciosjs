@@ -1,29 +1,36 @@
-/*let res = document.getElementById('lista-tarefas')
-let itemLi = document.getElementById('nova-tarefa')
+// Variáveis
+const tarefaInput = document.getElementById("nova-tarefa");
+const adicionarBotao = document.getElementById("adicionar");
+const listaTarefas = document.getElementById("lista-tarefas");
 
-function adicionar(){
-    var li = document.createElement('li')
-    var input = document.createElement('input')
-    var remove = document.createElement('button')
-    itens.push(nova-tarefa);
-    remove.addEventListener('click',function(){
-        res.removeChild(li)
-    })
-    
-    input.setAttribute('type', 'checkbox')
-    remove.textContent = 'Remover'
-    res.appendChild(li).innerHTML = `${intemLi.value}`
-    li.appendChild(input)
-    li.appendChild(remove)
-}*/
 
-function adicionar(){
-    let tarefa = document.getElementById('nova-tarefa').value;
-    let list = document.getElementById('lista-tarefas').innerHTML;
-    
-    list += "<li>" +tarefa+ "<li>"
+// Event Listeners
+adicionarBotao.addEventListener("click", adicionarTarefa);
+tarefaInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+      adicionarTarefa();
+  }
+});
 
-    document.getElementById('lista-tarefa').innerHTML = list;
-    document.getElementById('nova-tarefa').value = null;
 
+// Funções
+function adicionarTarefa() {
+  const tarefaTexto = tarefaInput.value;
+  if (tarefaTexto.trim() !== "") {
+      const novaTarefa = document.createElement("li");
+      novaTarefa.innerHTML = `
+          ${tarefaTexto} <button class="excluir">Excluir</button>
+      `;
+      listaTarefas.appendChild(novaTarefa);
+      tarefaInput.value = "";
+  }
 }
+
+
+listaTarefas.addEventListener("click", function (e) {
+  if (e.target.classList.contains("excluir")) {
+      e.target.parentElement.remove();
+  }
+});
+
+
